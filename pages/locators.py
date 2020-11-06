@@ -5,6 +5,7 @@ class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, '#login_link')
     BASKET_BUTTON = (By.CSS_SELECTOR, 'div.basket-mini span.btn-group')
     CURRENT_LANGUAGE = (By.CSS_SELECTOR, 'select[name="language"] option[selected]')
+    USER_ICON = (By.CSS_SELECTOR, '.icon-user')
 
 
 class BasketPageLocators:
@@ -20,6 +21,10 @@ class MainPageLocators:
 class LoginPageLocators:
     LOGIN_FORM = (By.CSS_SELECTOR, '#login_form')
     REGISTER_FORM = (By.CSS_SELECTOR, '#register_form')
+    REGISTER_EMAIL = (By.CSS_SELECTOR, '#register_form [type="email"]')
+    REGISTER_PASSWORD = (By.CSS_SELECTOR, '#register_form [name="registration-password1"]')
+    REGISTER_REPEAT_PASSWORD = (By.CSS_SELECTOR, '#register_form [name="registration-password2"]')
+    REGISTRATION_SUBMIT = (By.CSS_SELECTOR, 'button[name="registration_submit"]')
 
 
 class ProductPageLocators:
