@@ -31,12 +31,8 @@ class ProductPage(BasePage):
         value = self.browser.find_element(*ProductPageLocators.TOTAL_BASKET_VALUE).text
         return value
 
-    def check_product_name_and_alert_product_name_equals(self):
-        product_name = self.get_product_name()
-        alert_product_name = self.get_alert_product_name()
+    def check_product_name_and_alert_product_name_equals(self, product_name, alert_product_name):
         assert product_name == alert_product_name, 'The names are different'
 
-    def check_price_and_total_basket_value_equals(self):
-        product_price = self.get_product_price()
-        total_basket_value = self.get_total_basket_value()
+    def check_price_and_total_basket_value_equals(self, product_price, total_basket_value):
         assert product_price == total_basket_value, 'The prices are different'

@@ -8,7 +8,7 @@ languages = {
     "cs": "Váš košík je prázdný.",
     "da": "Din indkøbskurv er tom.",
     "de": "Ihr Warenkorb ist leer.",
-    "en": "Your basket is empty.",
+    "en-gb": "Your basket is empty.",
     "el": "Το καλάθι σας είναι άδειο.",
     "es": "Tu carrito esta vacío.",
     "fi": "Korisi on tyhjä",
@@ -35,13 +35,12 @@ class BasketPage(BasePage):
         basket_text = basket_text[:-1]
         language_tag = self.browser.find_element(*BasePageLocators.CURRENT_LANGUAGE)
         language = language_tag.get_attribute('value')
-        print(f'Язык - {language}, тип - {type(language)}')
-        print(basket_text, languages[language])
-        return basket_text == languages[language]
+        assert basket_text == languages[language], 'Basket text is not empty'
 
     def should_basket_contains_no_products(self):
         try:
             items = self.browser.find_element(*BasketPageLocators.BASKET_ITEMS)
+            res = False
         except NoSuchElementException:
-            return True
-        return False
+            res = True
+        assert res, 'Basket is not empty'
