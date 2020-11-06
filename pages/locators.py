@@ -3,7 +3,14 @@ from selenium.webdriver.common.by import By
 
 class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, '#login_link')
-    # BASKET_BUTTON = (By.CSS_SELECTOR, 'div.basket-mini span.btn-group')
+    BASKET_BUTTON = (By.CSS_SELECTOR, 'div.basket-mini span.btn-group')
+    CURRENT_LANGUAGE = (By.CSS_SELECTOR, 'select[name="language"] option[selected]')
+
+
+class BasketPageLocators:
+    EMPTY_BASKET_TEXT = (By.CSS_SELECTOR, '#content_inner p')
+    BASKET_ITEMS = (By.CSS_SELECTOR, '.basket-items')
+    CONTINUE_SHOPPING_TEXT = (By.CSS_SELECTOR, '#content_inner p a')
 
 
 class MainPageLocators:
