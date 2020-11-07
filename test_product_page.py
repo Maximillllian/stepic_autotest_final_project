@@ -120,4 +120,6 @@ def test_message_disappeared_after_adding_product_to_basket(browser):
     page.should_success_message_disappeared()
 
 
+if __name__ == '__main__':
+    print(1)
 

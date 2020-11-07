@@ -28,6 +28,6 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     page.go_to_basket()
     basket_link = page.get_current_url()
     basket_page = BasketPage(browser, basket_link)
-    assert basket_page.should_basket_contains_no_products(), 'Basket is not empty'
-    assert basket_page.should_basket_text_is_empty(), 'Basket text is not empty'
+    basket_page.should_basket_contains_no_products()
+    basket_page.should_basket_text_is_empty()
 # pytest -v --tb=line --language=en test_main_page.py
